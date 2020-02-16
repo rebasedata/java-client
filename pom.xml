@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.rebasedata</groupId>
     <artifactId>client</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -12,6 +12,7 @@
     </properties>
     <name>RebaseData Java Client</name>
     <build>
+        <finalName>rebasedata-client-${version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -27,4 +28,11 @@
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub RebaseData Maven Packages</name>
+            <url>https://maven.pkg.github.com/rebasedata/java-client</url>
+        </repository>
+    </distributionManagement>
 </project>
