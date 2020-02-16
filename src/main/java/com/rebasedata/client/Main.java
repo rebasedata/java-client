@@ -138,7 +138,7 @@ public class Main {
             if (outputPath.endsWith(".zip")) {
                 File outputZipFile = new File(outputPath);
 
-                if (!outputZipFile.getParentFile().exists()) {
+                if (outputZipFile.getParentFile() != null && !outputZipFile.getParentFile().exists()) {
                     System.err.println("Output ZIP file folder does not exist: " + outputZipFile.getParent());
                     System.exit(1);
                 }

@@ -100,6 +100,9 @@ public class Converter {
         CreateZipFileService.execute(inputZipFile, inputFiles);
 
         String urlString = config.getProtocol() + "://" + config.getHost() + "/api/v1/convert?";
+        
+        // Handle output format
+        urlString += "outputFormat=" + URLEncoder.encode(outputFormat, "UTF-8") + "&";
 
         // Handle api key
         if (options.containsKey("apiKey")) {
