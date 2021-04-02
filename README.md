@@ -8,7 +8,7 @@ This library allows to convert various database formats in Java using the Rebase
 Installation
 ------------
 
-Download the [JAR file](https://www.rebasedata.com/rebasedata-client-0.0.1.jar).
+Download the [latest JAR file](https://search.maven.org/artifact/com.rebasedata/client).
 There are no dependencies.
 
 Command line examples
@@ -54,23 +54,23 @@ import com.rebasedata.client.Converter;
 import com.rebasedata.client.InputFile;
 
 List<InputFile> inputFiles = new ArrayList();
-inputFiles.add(new InputFile("access.mdb"));
+inputFiles.add(new InputFile(new File("access.mdb")));
 
 Converter converter = new Converter();
-converter.convertAndSaveToZipFile(inputFiles, "csv", "output.zip");
+converter.convertAndSaveToZipFile(inputFiles, "csv", new File("/tmp/output.zip"));
 ```
 
-Convert a MDB database to MySQL and save the reuslt in a local directory.
+Convert a MDB database to MySQL and save the result in a local directory.
 
 ```java
 import com.rebasedata.client.Converter;
 import com.rebasedata.client.InputFile;
 
 List<InputFile> inputFiles = new ArrayList();
-inputFiles.add(new InputFile("access.mdb"));
+inputFiles.add(new InputFile(new File("access.mdb")));
 
 Converter converter = new Converter();
-converter.convertAndSaveToDirectory(inputFiles, "mysql", "output.zip");
+converter.convertAndSaveToDirectory(inputFiles, "mysql", new File("/tmp/output/"));
 ```
 
 You can also change the configuration of the library:
